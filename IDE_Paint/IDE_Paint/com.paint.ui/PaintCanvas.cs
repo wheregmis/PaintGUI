@@ -277,44 +277,6 @@ End Loop
            
         }
 
-        public void validateCommand()
-        {
-            int Length = txtCommand.Lines.Length;
-
-            string[] text = new string[Length];
-
-            for (int x = 0; x < Length; x++)
-            {
-                text[x] = txtCommand.Lines[x].ToString();
-                MessageBox.Show(txtCommand.Lines[0].ToString());
-                String command = text[x].ToLower();
-                //  String command = "Draw Rectangle 20,20 on x,y";
-                string[] words = command.Split(' ');
-                if (words[0].Equals("draw"))
-                {
-                    if (words[1].Equals("rectangle"))
-                    {
-                        //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-
-                        DrawShape(words[1].ToUpper(), words[2], words[4]);
-
-                    }
-                    else if (words[1].Equals("circle"))
-                    {
-                        //   PaintCanvas pc = new PaintCanvas();
-                        //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
-
-                        //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-                        DrawShape(words[1].ToUpper(), words[2], words[4]);
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Draw Milena");
-                }
-            }
-
-        }
+        
     }
 }
