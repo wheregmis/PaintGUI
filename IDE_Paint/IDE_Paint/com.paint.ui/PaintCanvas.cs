@@ -260,19 +260,33 @@ End Loop
             Console.WriteLine(axis);
             if (param.Length > 1)
             {
-                this.width = Convert.ToInt32(param[0]);
-                this.height = Convert.ToInt32(param[1]);
+                try {
+                    this.width = Convert.ToInt32(param[0]);
+                    this.height = Convert.ToInt32(param[1]);
+                } catch (Exception) {
+                    MessageBox.Show("Parameter Invalid");
+                }
+                
             }
             else {
-                this.width = Convert.ToInt32(param[0]);
-                this.height = 0;
+                try {
+                    this.width = Convert.ToInt32(param[0]);
+                    this.height = 0;
+                } catch (Exception) {
+                    MessageBox.Show("Parameter Invalid");
+                }
+               
             }
             
 
             string[] point = axis.Split(',');
-
-            this.x = Convert.ToInt32(point[0]);
-            this.y = Convert.ToInt32(point[1]);
+            try {
+                this.x = Convert.ToInt32(point[0]);
+                this.y = Convert.ToInt32(point[1]);
+            } catch (Exception) {
+                MessageBox.Show("Axis Invalid");
+            }
+            
 
            
         }

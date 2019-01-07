@@ -126,9 +126,8 @@ namespace IDE_Paint
         public bool SyntaxChecker() {
             Boolean test = false;
             string paramPattern = @"((\d+),(\d+))";
-            string[] syntax = new string[2];
-            syntax[0] = "draw";
-            syntax[1] = "test";
+            string[] syntax = new string[] { "draw", "rectangle", "on" };
+            
             String command = txtCommand.Text.ToLower();
             //  String command = "Draw Rectangle 20,20 on x,y";
             string[] words = command.Split(' ');
@@ -139,30 +138,39 @@ namespace IDE_Paint
                 bool isparameterValid = Regex.IsMatch(words[i], paramPattern);
 
                 if (!isparameterValid) {
-                    
-                        var target = words[i];
-                        var results = Array.Exists(syntax, s => s.Equals(target));
-                        if (results)
-                        {
+                    var target = words[i];
+                    var results = Array.Exists(syntax, s => s.Equals(target));
+                    if (results)
+                    {
                         test = true;
-                            
+
+                    }
+                    else
+                    {
+                        string paramPatterntest1 = @"((\d+\w),(\w\d+))";
+                        string paramPatterntest2 = @"(([a-zA-Z]\d+[a-zA-Z]),([a-zA-Z]\d+[a-zA-Z]))";
+                        bool isparameterValidcheck1 = Regex.IsMatch(words[i], paramPatterntest1);
+                        bool isparameterValidcheck2 = Regex.IsMatch(words[i], paramPatterntest2);
+                        if (isparameterValidcheck1 || isparameterValidcheck2)
+                        {
+                            test = false;
+                            txtOutput.Text = "Invalid Parameter " + words[i];
+                            return test;
                         }
                         else {
-                        
                             test = false;
                             txtOutput.Text = "Invalid Command " + words[i];
                             return test;
-                        
                         }
+                       
+
+                    }
                 }
-                else
-                {
-                    test = true;
-                }
-    
-             }
-            
-            return test;
+                        
+            }
+
+            //return test;
+            return true;
 
         }
     }
