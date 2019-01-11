@@ -36,12 +36,12 @@
             this.commandListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtTerminal = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnRun = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtCommand = new System.Windows.Forms.RichTextBox();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
+            this.txtTerminal = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,24 +111,6 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // txtTerminal
-            // 
-            this.txtTerminal.Depth = 0;
-            this.txtTerminal.Hint = "";
-            this.txtTerminal.Location = new System.Drawing.Point(759, 149);
-            this.txtTerminal.MaxLength = 32767;
-            this.txtTerminal.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtTerminal.Name = "txtTerminal";
-            this.txtTerminal.PasswordChar = '\0';
-            this.txtTerminal.SelectedText = "";
-            this.txtTerminal.SelectionLength = 0;
-            this.txtTerminal.SelectionStart = 0;
-            this.txtTerminal.Size = new System.Drawing.Size(509, 28);
-            this.txtTerminal.TabIndex = 2;
-            this.txtTerminal.TabStop = false;
-            this.txtTerminal.UseSystemPasswordChar = false;
-            this.txtTerminal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTerminal_KeyDown);
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
@@ -189,17 +171,35 @@
             this.txtOutput.TabIndex = 8;
             this.txtOutput.Text = "";
             // 
+            // txtTerminal
+            // 
+            this.txtTerminal.Depth = 0;
+            this.txtTerminal.Hint = "";
+            this.txtTerminal.Location = new System.Drawing.Point(845, 149);
+            this.txtTerminal.MaxLength = 32767;
+            this.txtTerminal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTerminal.Name = "txtTerminal";
+            this.txtTerminal.PasswordChar = '\0';
+            this.txtTerminal.SelectedText = "";
+            this.txtTerminal.SelectionLength = 0;
+            this.txtTerminal.SelectionStart = 0;
+            this.txtTerminal.Size = new System.Drawing.Size(423, 28);
+            this.txtTerminal.TabIndex = 9;
+            this.txtTerminal.TabStop = false;
+            this.txtTerminal.UseSystemPasswordChar = false;
+            this.txtTerminal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTerminal_KeyDown);
+            // 
             // formIDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.txtCommand);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -218,7 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem codeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtTerminal;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialFlatButton btnRun;
@@ -228,6 +227,7 @@
         private System.Windows.Forms.ToolStripMenuItem commandListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.RichTextBox txtOutput;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTerminal;
     }
 }
 

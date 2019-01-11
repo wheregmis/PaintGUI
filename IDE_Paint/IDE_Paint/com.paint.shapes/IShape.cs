@@ -11,5 +11,6 @@ namespace IDE_Paint.com.paint.shapes
     {
         void Draw(Graphics g);
         void SetParam(int x, int y, int width, int height);
+        void setPoints(PointF p);
     }
 }

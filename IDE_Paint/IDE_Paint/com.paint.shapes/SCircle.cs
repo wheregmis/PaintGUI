@@ -30,5 +30,10 @@ namespace IDE_Paint.com.paint.shapes
             this.width = width;
             this.height = height;
         }
+
+        public void setPoints(PointF p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -31,6 +31,21 @@ namespace IDE_Paint.com.paint.factory
                 return new STriangle();
 
             }
+            else if (shapeType.Equals("CUBE"))
+            {
+                return new SCube();
+
+            }
+            else if (shapeType.Equals("POLYGON"))
+            {
+                return new SPolygon();
+
+            }
+            else if (shapeType.Equals("TEXTURE"))
+            {
+                return new STexture();
+
+            }
 
             return null;
         }

@@ -195,6 +195,41 @@ End Loop
                             shape2.SetParam(this.x, this.y, this.width, this.height);
                             shape2.Draw(g);
                         }
+                        else if (words[1].Equals("cube"))
+                        {
+                            //draw cube 100 on 100,100
+                            //   PaintCanvas pc = new PaintCanvas();
+                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
+
+                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
+                            DrawShape(words[1].ToUpper(), words[2]+","+ words[2], words[4]);
+
+                            IShape shape2 = ShapeFactory.getShape("CUBE");
+                            shape2.SetParam(this.x, this.y, this.width, this.height);
+                            shape2.Draw(g);
+                        }
+                        else if (words[1].Equals("polygon"))
+                        {
+                            //   PaintCanvas pc = new PaintCanvas();
+                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
+
+                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
+                          //  DrawShape(words[1].ToUpper(), words[2], words[4]);
+                            IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
+                           // shape2.SetParam(this.x, this.y, this.width, this.height);
+                            shape2.Draw(g);
+                        }
+                        else if (words[1].Equals("texture"))
+                        {
+                            //   PaintCanvas pc = new PaintCanvas();
+                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
+
+                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
+                            //  DrawShape(words[1].ToUpper(), words[2], words[4]);
+                            IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
+                            // shape2.SetParam(this.x, this.y, this.width, this.height);
+                            shape2.Draw(g);
+                        }
 
                     }
                     else if (words[0].Equals("repeat") || words[0].Equals("loop")) {

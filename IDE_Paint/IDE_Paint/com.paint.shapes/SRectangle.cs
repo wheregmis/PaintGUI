@@ -35,6 +35,11 @@ namespace IDE_Paint.com.paint.shapes
             
 
         }
+
+        public void setPoints(PointF p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

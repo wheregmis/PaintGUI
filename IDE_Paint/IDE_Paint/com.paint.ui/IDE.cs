@@ -21,6 +21,7 @@ namespace IDE_Paint
         public formIDE()
         {
             InitializeComponent();
+           // SyntaxHightlighting();
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -83,50 +84,43 @@ namespace IDE_Paint
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+           
         }
 
-        private void txtTerminal_KeyDown(object sender, KeyEventArgs e)
-        {
-
-
-
-            if (e.KeyCode == Keys.Enter)
-            {
-                
-                
-            }
-            /*
-            txtOutput.Text = "";
-            if (e.KeyCode == Keys.Enter)
-            {
-                
-                    if (txtTerminal.Text.Equals("run"))
-                    {
-                    new PaintCanvas(txtCommand).Show();
-                    }
-                    else
-                    {
-                        txtOutput.Text = "Invalid Command for terminal";
-                        txtOutput.ReadOnly = true;
-                    }
-
-                
-            }
-            */
-
-
-        }
+     
+        
 
         private void txtCommand_TextChanged(object sender, EventArgs e)
         {
             txtOutput.Text = "";
+          
             
+        }
+
+        private void txtTerminal_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtOutput.Text = "";
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                if (txtTerminal.Text.Equals("run"))
+                {
+                    new PaintCanvas(txtCommand).Show();
+                }
+                else
+                {
+                    txtOutput.Text = "Invalid Command for terminal";
+                    txtOutput.ReadOnly = true;
+                }
+
+
+            }
         }
 
         public bool SyntaxChecker() {
             Boolean test = false;
             string paramPattern = @"((\d+),(\d+))";
-            string[] syntax = new string[] { "draw", "rectangle", "on" };
+            string[] syntax = new string[] { "draw", "rectangle", "on", "cube", "polygon", "texture" };
             
             String command = txtCommand.Text.ToLower();
             //  String command = "Draw Rectangle 20,20 on x,y";
