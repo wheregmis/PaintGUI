@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="com.paint.factory\ShapeFactory.cs" />
     <Compile Include="com.paint.shapes\IShape.cs" />
-    <Compile Include="com.paint.shapes\SCircle.cs" />
+    <Compile Include="com.paint.shapes\SEllipse.cs" />
     <Compile Include="com.paint.shapes\SCube.cs" />
     <Compile Include="com.paint.shapes\SPolygon.cs" />
     <Compile Include="com.paint.shapes\STexture.cs" />

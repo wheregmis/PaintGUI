@@ -9,9 +9,11 @@ namespace IDE_Paint.com.paint.shapes
 {
     class SPolygon : IShape
     {
+        Point[] curvePoints;
         public void Draw(Graphics g)
         {
             Pen myBlackPen = new Pen(Color.Black, 5); //create a pen object
+            /*
             PointF point1 = new PointF(50.0F, 50.0F);
             PointF point2 = new PointF(100.0F, 25.0F);
             PointF point3 = new PointF(200.0F, 5.0F);
@@ -30,8 +32,9 @@ namespace IDE_Paint.com.paint.shapes
                  point7
              };
 
+    */
             // Draw polygon curve to screen.
-            g.DrawPolygon(myBlackPen, curvePoints);
+            g.DrawPolygon(myBlackPen, this.curvePoints);
         }
 
         public void SetParam(int x, int y, int width, int height)
@@ -39,9 +42,9 @@ namespace IDE_Paint.com.paint.shapes
            
         }
 
-        public void setPoints(PointF p)
+        public void setPoints(Point[] p)
         {
-            
+            this.curvePoints = p;
         }
     }
 }

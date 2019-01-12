@@ -57,7 +57,7 @@ namespace IDE_Paint.com.paint.shapes
             this.width = width;
         }
 
-        public void setPoints(PointF p)
+        public void setPoints(Point[] p)
         {
             throw new NotImplementedException();
         }

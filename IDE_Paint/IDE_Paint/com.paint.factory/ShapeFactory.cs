@@ -16,9 +16,9 @@ namespace IDE_Paint.com.paint.factory
             {
                 return null;
             }
-            if (shapeType.Equals("CIRCLE"))
+            if (shapeType.Equals("ELLIPSE"))
             {
-                return new SCircle();
+                return new SEllipse();
 
             }
             else if (shapeType.Equals("RECTANGLE"))

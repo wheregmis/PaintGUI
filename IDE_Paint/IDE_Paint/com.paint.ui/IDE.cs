@@ -17,16 +17,17 @@ namespace IDE_Paint
     public partial class formIDE : MaterialForm
     {
         public int x, y;
-       
+        public string Syntaxcommand;
         public formIDE()
         {
             InitializeComponent();
            // SyntaxHightlighting();
+           
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            Boolean syntaxChecked = SyntaxChecker();
+            Boolean syntaxChecked = SyntaxChecker(txtCommand.Text);
             if (syntaxChecked)
             {
                 new PaintCanvas(txtCommand).Show();
@@ -117,12 +118,13 @@ namespace IDE_Paint
             }
         }
 
-        public bool SyntaxChecker() {
+        public bool SyntaxChecker(String commandsyntax) {
             Boolean test = false;
-            string paramPattern = @"((\d+),(\d+))";
-            string[] syntax = new string[] { "draw", "rectangle", "on", "cube", "polygon", "texture" };
+           // string paramPattern = @"((\d+),(\d+))";
+            string paramPattern = @"((\d+),(\d+)) |([0-9])";
+            string[] syntax = new string[] { "draw", "repeat", "substract", "triangle", "rectangle", "on", "cube", "polygon", "texture", "ellipse", "loop", "add", "declare", "width", "height", "x", "y", "end", "startif", "endif", "" };
             
-            String command = txtCommand.Text.ToLower();
+            String command = commandsyntax.ToLower();
             //  String command = "Draw Rectangle 20,20 on x,y";
             string[] words = command.Split(' ');
 
@@ -149,12 +151,16 @@ namespace IDE_Paint
                         {
                             test = false;
                             txtOutput.Text = "Invalid Parameter " + words[i];
+                           
                             return test;
+                           
                         }
                         else {
                             test = false;
                             txtOutput.Text = "Invalid Command " + words[i];
+                           
                             return test;
+                            
                         }
                        
 

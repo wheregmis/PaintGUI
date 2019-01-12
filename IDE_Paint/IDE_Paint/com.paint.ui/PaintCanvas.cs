@@ -14,6 +14,7 @@ namespace IDE_Paint.com.paint.ui
 {
     public partial class PaintCanvas : Form
     {
+        //ellipse
         public Graphics g;
         String Shape;
         RichTextBox txtCommand;
@@ -83,7 +84,7 @@ End Loop
                     else if (words[0].Equals("add"))
                     {
                        
-                        if (words[1].Equals("circle")){
+                        if (words[1].Equals("ellipse")){
                             this.incrementCircle = Convert.ToInt32(words[2]);
                         }
                         if (words[1].Equals("rectangle")){
@@ -93,7 +94,7 @@ End Loop
                         
                     }
 
-                    else if (words[0].Equals("circle"))
+                    else if (words[0].Equals("ellipse"))
                     {
                         int wi = this.wid;
                         int hi = this.hei;
@@ -118,7 +119,7 @@ End Loop
 
                         }
                     }
-                    else if (words[0].Equals("rectangle"))
+                    else if (words[0].Equals("ellipse"))
                     {
 
                         int wi = this.wid;
@@ -171,7 +172,7 @@ End Loop
                             shape2.Draw(g);
 
                         }
-                        else if (words[1].Equals("circle"))
+                        else if (words[1].Equals("ellipse"))
                         {
                             //   PaintCanvas pc = new PaintCanvas();
                             //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
@@ -185,12 +186,8 @@ End Loop
 
                         else if (words[1].Equals("triangle"))
                         {
-                            //   PaintCanvas pc = new PaintCanvas();
-                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
-
-                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
+                            
                             DrawShape(words[1].ToUpper(), words[2], words[4]);
-
                             IShape shape2 = ShapeFactory.getShape("TRIANGLE");
                             shape2.SetParam(this.x, this.y, this.width, this.height);
                             shape2.Draw(g);
@@ -198,36 +195,39 @@ End Loop
                         else if (words[1].Equals("cube"))
                         {
                             //draw cube 100 on 100,100
-                            //   PaintCanvas pc = new PaintCanvas();
-                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
-
-                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-                            DrawShape(words[1].ToUpper(), words[2]+","+ words[2], words[4]);
+                            
+                              DrawShape(words[1].ToUpper(), words[2]+","+ words[2], words[4]);
+                            int param = Convert.ToInt32(words[2]);
 
                             IShape shape2 = ShapeFactory.getShape("CUBE");
-                            shape2.SetParam(this.x, this.y, this.width, this.height);
+                            shape2.SetParam(this.x, this.y, param, param);
                             shape2.Draw(g);
                         }
                         else if (words[1].Equals("polygon"))
                         {
-                            //   PaintCanvas pc = new PaintCanvas();
-                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
 
-                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-                          //  DrawShape(words[1].ToUpper(), words[2], words[4]);
+                            //draw polygon 100,100 120,350 220,350 240,320
+                           
+                            List<Point> pointList = new List<Point>();
+                          //  MessageBox.Show(words.Length.ToString());
+                            for (int j = 2; j < words.Length; j++)
+                            {
+                                string[] points = words[j].Split(',');
+                                pointList.Add(new Point(Convert.ToInt32( points[0]), Convert.ToInt32(points[1])));
+                            }
+                            Point[] pointArray = pointList.ToArray();
                             IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
+                            shape2.setPoints(pointArray);
                            // shape2.SetParam(this.x, this.y, this.width, this.height);
                             shape2.Draw(g);
                         }
                         else if (words[1].Equals("texture"))
                         {
-                            //   PaintCanvas pc = new PaintCanvas();
-                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
-
-                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-                            //  DrawShape(words[1].ToUpper(), words[2], words[4]);
+                            //draw texture 100,100
+                            
+                            DrawShape(words[1].ToUpper(), words[2], null);
                             IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
-                            // shape2.SetParam(this.x, this.y, this.width, this.height);
+                             shape2.SetParam(0, 0, this.width, this.height);
                             shape2.Draw(g);
                         }
 
@@ -239,40 +239,91 @@ End Loop
 
                             //repeat 4 rectangle width,height on x,y add 10
                             //repeat 4 rectangle 50,50 on 20,20 add 10
-
-
+                            //repeat 4 rectangle 50,50 on 50,50 substract 10
+                            DrawShape(words[2].ToUpper(), words[3], words[5]);
                             int wi = this.width;
                             int hi = this.height;
+
                             for (int i = 0; i < Convert.ToInt32(words[1]); i++)
                             {
-                                Console.WriteLine(i);
-                                DrawShape(words[2].ToUpper(), words[3], words[5]);
+                              
                                 IShape shape3 = ShapeFactory.getShape(this.Shape);
                                 shape3.SetParam(this.x, this.y, wi, hi);
-                                wi = wi + Convert.ToInt32(words[7]);
-                                hi = hi + Convert.ToInt32(words[7]);
-                                shape3.Draw(g);
-
-
+                                if (words[6].Equals("add")) {
+                                    Console.WriteLine(i);
+                                    wi = wi + Convert.ToInt32(words[7]);
+                                    hi = hi + Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                else if (words[6].Equals("substract"))
+                                {
+                                    Console.WriteLine(i);
+                                    wi = wi - Convert.ToInt32(words[7]);
+                                    hi = hi - Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                
                             }
 
                         }
-                        else if (words[2].Equals("circle"))
+                        else if (words[2].Equals("ellipse"))
                         {
+                            DrawShape(words[2].ToUpper(), words[3], words[5]);
                             int wi = this.width;
                             int hi = this.height;
+
                             for (int i = 0; i < Convert.ToInt32(words[1]); i++)
                             {
-                                Console.WriteLine(i);
-                                DrawShape(words[2].ToUpper(), words[3], words[5]);
+
                                 IShape shape3 = ShapeFactory.getShape(this.Shape);
                                 shape3.SetParam(this.x, this.y, wi, hi);
-                                wi = wi + Convert.ToInt32(words[7]);
-                                hi = hi + Convert.ToInt32(words[7]);
-                                shape3.Draw(g);
+                                if (words[6].Equals("add"))
+                                {
+                                    Console.WriteLine(i);
+                                    wi = wi + Convert.ToInt32(words[7]);
+                                    hi = hi + Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                else if (words[6].Equals("substract"))
+                                {
+                                    Console.WriteLine(i);
+                                    wi = wi - Convert.ToInt32(words[7]);
+                                    hi = hi - Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                
 
                             }
                         }
+                        else if (words[2].Equals("triangle"))
+                        {
+                            DrawShape(words[2].ToUpper(), words[3], words[5]);
+                            int wi = this.width;
+                            int hi = this.height;
+
+                            for (int i = 0; i < Convert.ToInt32(words[1]); i++)
+                            {
+
+                                IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                shape3.SetParam(this.x, this.y, wi, hi);
+                                if (words[6].Equals("add"))
+                                {
+                                    Console.WriteLine(i);
+                                    wi = wi + Convert.ToInt32(words[7]);
+                                    hi = hi + Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                else if (words[6].Equals("substract"))
+                                {
+                                    Console.WriteLine(i);
+                                    wi = wi - Convert.ToInt32(words[7]);
+                                    hi = hi - Convert.ToInt32(words[7]);
+                                    shape3.Draw(g);
+                                }
+                                
+                            }
+                        }
+                        
                     }
 
                 }
@@ -312,15 +363,24 @@ End Loop
                 }
                
             }
-            
 
-            string[] point = axis.Split(',');
-            try {
-                this.x = Convert.ToInt32(point[0]);
-                this.y = Convert.ToInt32(point[1]);
-            } catch (Exception) {
-                MessageBox.Show("Axis Invalid");
+            if (axis == null)
+            {
+
             }
+            else {
+                string[] point = axis.Split(',');
+                try
+                {
+                    this.x = Convert.ToInt32(point[0]);
+                    this.y = Convert.ToInt32(point[1]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Axis Invalid");
+                }
+            }
+            
             
 
            

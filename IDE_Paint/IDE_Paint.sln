@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDE_Paint", "IDE_Paint\IDE_Paint.csproj", "{14982A8F-CCAD-488C-BC6B-137A33831A0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDE_PaintTests1", "IDE_PaintTests1\IDE_PaintTests1.csproj", "{DEDC937B-E6AF-4E80-99A4-C4AC5DACF721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{14982A8F-CCAD-488C-BC6B-137A33831A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14982A8F-CCAD-488C-BC6B-137A33831A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14982A8F-CCAD-488C-BC6B-137A33831A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDC937B-E6AF-4E80-99A4-C4AC5DACF721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDC937B-E6AF-4E80-99A4-C4AC5DACF721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDC937B-E6AF-4E80-99A4-C4AC5DACF721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDC937B-E6AF-4E80-99A4-C4AC5DACF721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

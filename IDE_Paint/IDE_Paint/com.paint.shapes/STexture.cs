@@ -11,6 +11,7 @@ namespace IDE_Paint.com.paint.shapes
 {
     class STexture : IShape
     {
+        public int width, height;
         public void Draw(Graphics g)
         {
             Image image = Image.FromFile("C:/Users/xawbe/Pictures/1.jpg");
@@ -23,15 +24,16 @@ namespace IDE_Paint.com.paint.shapes
                75.0f / 480.0f,
                0.0f,
                0.0f);
-            g.FillEllipse(tBrush, new Rectangle(100, 150, 150, 250));
+            g.FillEllipse(tBrush, new Rectangle(100, 150, this.width, this.height));
         }
 
         public void SetParam(int x, int y, int width, int height)
         {
-            throw new NotImplementedException();
+            this.width = width;
+            this.height = height;
         }
 
-        public void setPoints(PointF p)
+        public void setPoints(Point[] p)
         {
             throw new NotImplementedException();
         }

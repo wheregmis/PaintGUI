@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class SCircle : IShape
+    class SEllipse : IShape
     {
         private int y;
         private int x;
@@ -31,7 +31,7 @@ namespace IDE_Paint.com.paint.shapes
             this.height = height;
         }
 
-        public void setPoints(PointF p)
+        public void setPoints(Point[] p)
         {
             throw new NotImplementedException();
         }
