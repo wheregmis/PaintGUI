@@ -55,7 +55,7 @@
             this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(461, 81);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(178, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(328, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,8 +93,9 @@
             // commandListToolStripMenuItem
             // 
             this.commandListToolStripMenuItem.Name = "commandListToolStripMenuItem";
-            this.commandListToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.commandListToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.commandListToolStripMenuItem.Text = "Command List";
+            this.commandListToolStripMenuItem.Click += new System.EventHandler(this.commandListToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -204,6 +205,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "formIDE";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI Command Editor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

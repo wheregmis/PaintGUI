@@ -21,15 +21,20 @@ namespace IDE_Paint
         public formIDE()
         {
             InitializeComponent();
-           // SyntaxHightlighting();
            
         }
 
+        /// <summary>
+        /// action after run button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRun_Click(object sender, EventArgs e)
         {
             Boolean syntaxChecked = SyntaxChecker(txtCommand.Text);
             if (syntaxChecked)
             {
+                
                 new PaintCanvas(txtCommand).Show();
             }
             
@@ -98,6 +103,11 @@ namespace IDE_Paint
             
         }
 
+        /// <summary>
+        /// action to run the code after run command
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTerminal_KeyDown(object sender, KeyEventArgs e)
         {
             txtOutput.Text = "";
@@ -118,59 +128,81 @@ namespace IDE_Paint
             }
         }
 
+        private void commandListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CommandList().Show();
+        }
+
+        /// <summary>
+        /// method to check the syntax
+        /// </summary>
+        /// <param name="commandsyntax"></param>
+        /// <returns>true or false</returns>
         public bool SyntaxChecker(String commandsyntax) {
             Boolean test = false;
            // string paramPattern = @"((\d+),(\d+))";
-            string paramPattern = @"((\d+),(\d+)) |([0-9])";
-            string[] syntax = new string[] { "draw", "repeat", "substract", "triangle", "rectangle", "on", "cube", "polygon", "texture", "ellipse", "loop", "add", "declare", "width", "height", "x", "y", "end", "startif", "endif", "" };
+            string paramPattern = @"((\d+),(\d+))";
+            string parampattern1 = @"(^\d+$)";
+            string[] syntax = new string[] { "draw","declare width", "+", "-", "=", "repeat", "substract", "triangle", "rectangle", "on", "cube", "polygon", "texture", "ellipse", "loop", "add", "declare", "width", "height", "x", "y", "end", "startif", "endif", "" };
             
             String command = commandsyntax.ToLower();
             //  String command = "Draw Rectangle 20,20 on x,y";
             string[] words = command.Split(' ');
 
-            for (int i = 0; i < words.Length; i++)
-            {
-                Console.WriteLine("This is "+i);
-                bool isparameterValid = Regex.IsMatch(words[i], paramPattern);
-
-                if (!isparameterValid) {
-                    var target = words[i];
-                    var results = Array.Exists(syntax, s => s.Equals(target));
-                    if (results)
+           
+                for (int i = 0; i < words.Length; i++)
+                {
+                    Console.WriteLine(words[i]+ " "+i);
+                    bool isparameterValid = Regex.IsMatch(words[i], paramPattern);
+                    bool isparameterValid1 = Regex.IsMatch(words[i], parampattern1);
+                    if (!isparameterValid)
                     {
-                        test = true;
-
-                    }
-                    else
-                    {
-                        string paramPatterntest1 = @"((\d+\w),(\w\d+))";
-                        string paramPatterntest2 = @"(([a-zA-Z]\d+[a-zA-Z]),([a-zA-Z]\d+[a-zA-Z]))";
-                        bool isparameterValidcheck1 = Regex.IsMatch(words[i], paramPatterntest1);
-                        bool isparameterValidcheck2 = Regex.IsMatch(words[i], paramPatterntest2);
-                        if (isparameterValidcheck1 || isparameterValidcheck2)
+                        var target = words[i];
+                        var results = Array.Exists(syntax, s => s.Equals(target));
+                        if (results)
                         {
-                            test = false;
-                            txtOutput.Text = "Invalid Parameter " + words[i];
-                           
-                            return test;
-                           
-                        }
-                        else {
-                            test = false;
-                            txtOutput.Text = "Invalid Command " + words[i];
-                           
-                            return test;
-                            
-                        }
-                       
+                            test = true;
 
+                        }
+                        else
+                        {
+                            string curFile = words[i];
+                            string paramPatterntest1 = @"((\d+\w),(\w\d+))";
+                            string paramPatterntest2 = @"(([a-zA-Z]\d+[a-zA-Z]),([a-zA-Z]\d+[a-zA-Z]))";
+                            bool isparameterValidcheck1 = Regex.IsMatch(words[i], paramPatterntest1);
+                            bool isparameterValidcheck2 = Regex.IsMatch(words[i], paramPatterntest2);
+
+                            if (isparameterValid1)
+                            {
+                                test = true;
+
+                            }
+                            else if (File.Exists(curFile))
+                            {
+                                test = true;
+                            }
+                            else if (isparameterValidcheck1 || isparameterValidcheck2)
+                            {
+                                test = false;
+                                txtOutput.Text = "Invalid Parameter " + words[i];
+                                return test;
+
+                            }
+                            else
+                            {
+                                test = false;
+                                txtOutput.Text = "Invalid Command " + words[i];
+                                return test;
+
+                            }
+
+
+                        }
                     }
                 }
-                        
-            }
-
-            //return test;
+            
             return true;
+           // return true;
 
         }
     }

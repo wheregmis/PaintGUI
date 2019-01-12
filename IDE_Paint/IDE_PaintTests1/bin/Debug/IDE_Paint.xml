@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IDE_Paint</name>
+    </assembly>
+    <members>
+        <member name="M:IDE_Paint.com.paint.factory.ShapeFactory.getShape(System.String)">
+            <summary>
+            method to return the object of the shape
+            </summary>
+            <param name="shapeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.IShape.Draw(System.Drawing.Graphics)">
+            <summary>
+            method that needs to be implemented on the shapes
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.IShape.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method that needs to be implemented on the shapes
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.IShape.setPoints(System.Drawing.Point[])">
+            <summary>
+             method that needs to be implemented on the shapes
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.IShape.setPath(System.String)">
+            <summary>
+            method that needs to be implemented on the shapes
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SEllipse.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to graw ellipse on the picturebox
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SEllipse.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set values for ellipse
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SEllipse.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points for ellipse
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SCube.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to draw cube in the picture box
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SCube.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set the value for cube
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SCube.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points to the cube
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SPolygon.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to draw polygon in picturebox
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SPolygon.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set values for polygon
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SPolygon.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points for polygon
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STexture.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to draw texture
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STexture.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set values for texture
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STexture.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points for texture
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STriangle.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to draw triangle 
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STriangle.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set values for triangle
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.STriangle.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points for triangle
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SRectangle.SetParam(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            method to set parameter for rectangle
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SRectangle.Draw(System.Drawing.Graphics)">
+            <summary>
+            method to draw rectangle
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.shapes.SRectangle.setPoints(System.Drawing.Point[])">
+            <summary>
+            method to set points for rectangle
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="F:IDE_Paint.com.paint.ui.CommandList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.CommandList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.CommandList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.picCanvas_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            place where the graphics are drawn
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.#ctor(System.Windows.Forms.RichTextBox)">
+            <summary>
+            initializing constructor
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.DrawShape(System.String,System.String,System.String)">
+            <summary>
+            storing values in class variables
+            </summary>
+            <param name="Shape"></param>
+            <param name="parameter"></param>
+            <param name="axis"></param>
+        </member>
+        <member name="F:IDE_Paint.com.paint.ui.PaintCanvas.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.formIDE.btnRun_Click(System.Object,System.EventArgs)">
+            <summary>
+            action after run button clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:IDE_Paint.formIDE.txtTerminal_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            action to run the code after run command
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:IDE_Paint.formIDE.SyntaxChecker(System.String)">
+            <summary>
+            method to check the syntax
+            </summary>
+            <param name="commandsyntax"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="F:IDE_Paint.formIDE.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.formIDE.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:IDE_Paint.formIDE.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:IDE_Paint.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IDE_Paint.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IDE_Paint.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

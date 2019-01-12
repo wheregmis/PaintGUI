@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class SCube : IShape
+   public class SCube : IShape
     {
         private int y;
         private int x;
         private int width;
         private int height;
+
+        /// <summary>
+        /// method to draw cube in the picture box
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
             Console.WriteLine(this.height.ToString());
@@ -56,6 +61,13 @@ namespace IDE_Paint.com.paint.shapes
             g.DrawLine(myBlackPen, p6, p7);
         }
 
+        /// <summary>
+        /// method to set the value for cube
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void SetParam(int x, int y, int width, int height)
         {
             this.x = x;
@@ -64,6 +76,15 @@ namespace IDE_Paint.com.paint.shapes
             this.height = height;
         }
 
+        public void setPath(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// method to set points to the cube
+        /// </summary>
+        /// <param name="p"></param>
         public void setPoints(Point[] p)
         {
             throw new NotImplementedException();

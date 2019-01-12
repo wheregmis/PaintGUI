@@ -7,27 +7,17 @@ using System.Threading.Tasks;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class STriangle : IShape
+   public class STriangle : IShape
     {
         int x, y, width;
+
+        /// <summary>
+        /// method to draw triangle 
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
-            /*
-            Point point1 = new Point(50, 50);
-            Point point2 = new Point(100, 25);
-            Point point3 = new Point(200, 5);
-            Point[] curvePoints =
-             {
-                 point1,
-                 point2,
-                 point3
-             };
-            Pen myBlackPen = new Pen(Color.Black, 5); //create a pen object
-            // Draw polygon curve to screen.
-            g.DrawPolygon(myBlackPen, curvePoints);
-            */
-           // float x = 50;
-           // float y = 50;
+           
           int distance = this.width;
             float angle = 0;
 
@@ -50,6 +40,13 @@ namespace IDE_Paint.com.paint.shapes
             g.DrawPolygon(myBlackPen, p);
         }
 
+        /// <summary>
+        /// method to set values for triangle
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void SetParam(int x, int y, int width, int height)
         {
             this.x = x;
@@ -57,6 +54,15 @@ namespace IDE_Paint.com.paint.shapes
             this.width = width;
         }
 
+        public void setPath(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// method to set points for triangle
+        /// </summary>
+        /// <param name="p"></param>
         public void setPoints(Point[] p)
         {
             throw new NotImplementedException();

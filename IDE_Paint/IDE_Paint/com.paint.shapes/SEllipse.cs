@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class SEllipse : IShape
+   public class SEllipse : IShape
     {
         private int y;
         private int x;
         private int width;
         private int height;
 
+        /// <summary>
+        /// method to graw ellipse on the picturebox
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
            
@@ -23,6 +27,13 @@ namespace IDE_Paint.com.paint.shapes
            
         }
 
+        /// <summary>
+        /// method to set values for ellipse
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void SetParam(int x, int y, int width, int height)
         {
             this.x = x;
@@ -31,6 +42,15 @@ namespace IDE_Paint.com.paint.shapes
             this.height = height;
         }
 
+        public void setPath(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// method to set points for ellipse
+        /// </summary>
+        /// <param name="p"></param>
         public void setPoints(Point[] p)
         {
             throw new NotImplementedException();

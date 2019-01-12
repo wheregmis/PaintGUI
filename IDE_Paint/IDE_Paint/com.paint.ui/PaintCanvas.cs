@@ -20,9 +20,31 @@ namespace IDE_Paint.com.paint.ui
         RichTextBox txtCommand;
         int x, y, width, height, wid, hei, counter, x1, y1, checkcounter, incrementCircle, incrementRectangle, incrementvalue;
 
+        /// <summary>
+        /// place where the graphics are drawn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void picCanvas_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics; // get a reference to Graphics object
+
+            /*
+              int Length = txtCommand.Lines.Length;
+
+            string[] text = new string[Length];
+
+             for (int x = 1; x < Length; x++) {
+                    text[x] = txtCommand.Lines[x].ToString();
+                    String command = text[x].ToLower();
+                   
+                    string[] words = command.Split(' ');
+                    
+            }
+             * 
+             * */
+
+
 
             int Length = txtCommand.Lines.Length;
 
@@ -31,28 +53,17 @@ namespace IDE_Paint.com.paint.ui
             singleMultiple[0] = txtCommand.Lines[0].ToString();
 
             if (singleMultiple[0].ToLower().Equals("declare")){
-                MessageBox.Show("Welcome to declare");
-
-                /* 
-Declare
-Width = 20
-Height = 20
-X = 10
-Y = 10
-Loop 4
-if counter = 2 add 20
-Circle + 10
-End Loop
-                 */
+                
 
                 for (int x = 1; x < Length; x++) {
                     text[x] = txtCommand.Lines[x].ToString();
                     String command = text[x].ToLower();
                     //  String command = "Draw Rectangle 20,20 on x,y";
                     string[] words = command.Split(' ');
-                    
-                    if (words[0].Equals("width")){
-                        this.wid = Convert.ToInt32( words[2]);
+
+                    if (words[0].Equals("width"))
+                    {
+                        this.wid = Convert.ToInt32(words[2]);
                     }
                     else if (words[0].Equals("height"))
                     {
@@ -78,20 +89,22 @@ End Loop
                     else if (words[0].Equals("startif"))
                     {
                         this.checkcounter = Convert.ToInt32(words[3]);
-                     //   this.incrementCircle = this.incrementRectangle = Convert.ToInt32(words[3]);
+                        //   this.incrementCircle = this.incrementRectangle = Convert.ToInt32(words[3]);
                     }
 
                     else if (words[0].Equals("add"))
                     {
-                       
-                        if (words[1].Equals("ellipse")){
+
+                        if (words[1].Equals("ellipse"))
+                        {
                             this.incrementCircle = Convert.ToInt32(words[2]);
                         }
-                        if (words[1].Equals("rectangle")){
+                        if (words[1].Equals("rectangle"))
+                        {
                             this.incrementRectangle = Convert.ToInt32(words[2]);
                         }
-                        
-                        
+
+
                     }
 
                     else if (words[0].Equals("ellipse"))
@@ -100,13 +113,14 @@ End Loop
                         int hi = this.hei;
                         int xaxis = this.x1;
                         int yaxis = this.y1;
-                        string param = wi+","+hi;
-                        string axis = xaxis+","+yaxis;
+                        string param = wi + "," + hi;
+                        string axis = xaxis + "," + yaxis;
                         string shape = words[0];
-                        this.incrementvalue = Convert.ToInt32( words[2]);
+                        this.incrementvalue = Convert.ToInt32(words[2]);
                         for (int i = 0; i < this.counter; i++)
                         {
-                            if (i.Equals(this.checkcounter)) { 
+                            if (i.Equals(this.checkcounter))
+                            {
                                 this.incrementvalue = this.incrementCircle;
                             }
                             Console.WriteLine(i);
@@ -119,7 +133,7 @@ End Loop
 
                         }
                     }
-                    else if (words[0].Equals("ellipse"))
+                    else if (words[0].Equals("rectangle"))
                     {
 
                         int wi = this.wid;
@@ -146,6 +160,8 @@ End Loop
 
                         }
                     }
+                   
+                   
 
 
                 }
@@ -223,11 +239,13 @@ End Loop
                         }
                         else if (words[1].Equals("texture"))
                         {
-                            //draw texture 100,100
+                            //draw texture 100,100 C:/Users/xawbe/Pictures/1.jpg
+
                             
                             DrawShape(words[1].ToUpper(), words[2], null);
                             IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
                              shape2.SetParam(0, 0, this.width, this.height);
+                            shape2.setPath(words[3]);
                             shape2.Draw(g);
                         }
 
@@ -325,18 +343,28 @@ End Loop
                         }
                         
                     }
+                    
 
                 }
             }
         }
        
-
+        /// <summary>
+        /// initializing constructor
+        /// </summary>
+        /// <param name="command"></param>
         public PaintCanvas(RichTextBox command) {
             InitializeComponent();
             this.txtCommand = command;
           //  validateCommand();
         }
 
+        /// <summary>
+        /// storing values in class variables
+        /// </summary>
+        /// <param name="Shape"></param>
+        /// <param name="parameter"></param>
+        /// <param name="axis"></param>
         public void DrawShape(String Shape, String parameter, String axis) {
             this.Shape = Shape;
             
@@ -351,6 +379,7 @@ End Loop
                     this.height = Convert.ToInt32(param[1]);
                 } catch (Exception) {
                     MessageBox.Show("Parameter Invalid");
+                    this.Close();
                 }
                 
             }

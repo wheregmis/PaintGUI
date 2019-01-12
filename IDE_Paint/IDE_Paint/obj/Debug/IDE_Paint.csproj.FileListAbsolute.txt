@@ -14,6 +14,7 @@ C:\Users\xawbe\source\repos\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.exe
 C:\Users\xawbe\source\repos\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.pdb
 C:\Users\xawbe\source\repos\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.PaintCanvas.resources
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.exe.config
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.xml
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.exe
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.pdb
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\MaterialSkin.dll
@@ -28,3 +29,4 @@ C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.exe
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.pdb
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csprojAssemblyReference.cache
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.CommandList.resources

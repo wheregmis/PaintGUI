@@ -8,6 +8,7 @@ C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\Mat
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\IDE_Paint.pdb
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\IDE_Paint.xml
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\IDE_Paint.exe.config
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
@@ -16,3 +17,11 @@ C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\obj\Debug\IDE
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\obj\Debug\IDE_PaintTests1.csproj.CopyComplete
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\obj\Debug\IDE_PaintTests1.dll
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\obj\Debug\IDE_PaintTests1.pdb
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.abstractions.dll
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.assert.dll
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.core.dll
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.execution.desktop.dll
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.abstractions.xml
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.assert.xml
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.core.xml
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_PaintTests1\bin\Debug\xunit.execution.desktop.xml

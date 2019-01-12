@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\IDE_Paint.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,6 +61,12 @@
     <Compile Include="com.paint.shapes\STexture.cs" />
     <Compile Include="com.paint.shapes\STriangle.cs" />
     <Compile Include="com.paint.shapes\SRectangle.cs" />
+    <Compile Include="com.paint.ui\CommandList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.paint.ui\CommandList.Designer.cs">
+      <DependentUpon>CommandList.cs</DependentUpon>
+    </Compile>
     <Compile Include="com.paint.ui\IDE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="com.paint.ui\CommandList.resx">
+      <DependentUpon>CommandList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="com.paint.ui\IDE.resx">
       <DependentUpon>IDE.cs</DependentUpon>
     </EmbeddedResource>

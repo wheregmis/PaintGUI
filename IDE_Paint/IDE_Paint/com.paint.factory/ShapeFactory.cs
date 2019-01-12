@@ -9,7 +9,11 @@ namespace IDE_Paint.com.paint.factory
 {
     public class ShapeFactory
     {
-        //use getShape method to get object of type shape 
+        /// <summary>
+        /// method to return the object of the shape
+        /// </summary>
+        /// <param name="shapeType"></param>
+        /// <returns></returns>
         public static IShape getShape(String shapeType)
         {
             if (shapeType == null)

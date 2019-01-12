@@ -9,12 +9,18 @@ using System.Windows.Forms;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class STexture : IShape
+    public class STexture : IShape
     {
         public int width, height;
+        public string path;
+
+        /// <summary>
+        /// method to draw texture
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
-            Image image = Image.FromFile("C:/Users/xawbe/Pictures/1.jpg");
+            Image image = Image.FromFile(this.path);
             TextureBrush tBrush = new TextureBrush(image);
             
             tBrush.Transform = new Matrix(
@@ -27,12 +33,28 @@ namespace IDE_Paint.com.paint.shapes
             g.FillEllipse(tBrush, new Rectangle(100, 150, this.width, this.height));
         }
 
+        /// <summary>
+        /// method to set values for texture
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void SetParam(int x, int y, int width, int height)
         {
             this.width = width;
             this.height = height;
         }
 
+        public void setPath(string path)
+        {
+            this.path = path;
+        }
+
+        /// <summary>
+        /// method to set points for texture
+        /// </summary>
+        /// <param name="p"></param>
         public void setPoints(Point[] p)
         {
             throw new NotImplementedException();

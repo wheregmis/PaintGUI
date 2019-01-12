@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IDE_Paint.com.paint.shapes
 {
-    class SRectangle : IShape
+    public class SRectangle : IShape
     {
 
         private int y;
@@ -15,6 +15,13 @@ namespace IDE_Paint.com.paint.shapes
         private int width;
         private int height;
         
+        /// <summary>
+        /// method to set parameter for rectangle
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void SetParam(int x, int y, int width, int height)
         {
             this.x = x;
@@ -24,6 +31,10 @@ namespace IDE_Paint.com.paint.shapes
 
         }
 
+        /// <summary>
+        /// method to draw rectangle
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
 
@@ -36,7 +47,16 @@ namespace IDE_Paint.com.paint.shapes
 
         }
 
+        /// <summary>
+        /// method to set points for rectangle
+        /// </summary>
+        /// <param name="p"></param>
         public void setPoints(Point[] p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setPath(string path)
         {
             throw new NotImplementedException();
         }
