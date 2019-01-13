@@ -4,6 +4,17 @@
         <name>IDE_Paint</name>
     </assembly>
     <members>
+        <member name="T:IDE_Paint.com.paint.exception.PathException">
+            <summary>
+            path exception handling class
+            </summary>
+        </member>
+        <member name="M:IDE_Paint.com.paint.exception.PathException.#ctor(System.String)">
+            <summary>
+            Exception handling for empty path
+            </summary>
+            <param name="message"></param>
+        </member>
         <member name="M:IDE_Paint.com.paint.factory.ShapeFactory.getShape(System.String)">
             <summary>
             method to return the object of the shape
@@ -188,7 +199,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.#ctor(System.Windows.Forms.RichTextBox)">
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.#ctor(System.String)">
             <summary>
             initializing constructor
             </summary>
@@ -232,13 +243,6 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
-        </member>
-        <member name="M:IDE_Paint.formIDE.SyntaxChecker(System.String)">
-            <summary>
-            method to check the syntax
-            </summary>
-            <param name="commandsyntax"></param>
-            <returns>true or false</returns>
         </member>
         <member name="F:IDE_Paint.formIDE.components">
             <summary>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formIDE));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.codeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,11 +39,18 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnRun = new MaterialSkin.Controls.MaterialFlatButton();
-            this.txtCommand = new System.Windows.Forms.RichTextBox();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtTerminal = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCommand = new ScintillaNET.Scintilla();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -53,9 +61,9 @@
             this.codeToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.optionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(461, 81);
+            this.menuStrip1.Location = new System.Drawing.Point(476, 80);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(328, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(178, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,14 +79,14 @@
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click_1);
             // 
@@ -108,7 +116,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -118,7 +126,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(998, 112);
+            this.materialLabel1.Location = new System.Drawing.Point(570, 599);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(84, 24);
@@ -138,37 +146,14 @@
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Console";
             // 
-            // btnRun
-            // 
-            this.btnRun.AutoSize = true;
-            this.btnRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRun.Depth = 0;
-            this.btnRun.Icon = null;
-            this.btnRun.Location = new System.Drawing.Point(16, 141);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnRun.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Primary = false;
-            this.btnRun.Size = new System.Drawing.Size(56, 36);
-            this.btnRun.TabIndex = 6;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
-            // txtCommand
-            // 
-            this.txtCommand.Location = new System.Drawing.Point(12, 195);
-            this.txtCommand.Name = "txtCommand";
-            this.txtCommand.Size = new System.Drawing.Size(1256, 388);
-            this.txtCommand.TabIndex = 7;
-            this.txtCommand.Text = "";
-            this.txtCommand.TextChanged += new System.EventHandler(this.txtCommand_TextChanged);
-            // 
             // txtOutput
             // 
+            this.txtOutput.BackColor = System.Drawing.Color.DimGray;
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.ForeColor = System.Drawing.Color.Red;
             this.txtOutput.Location = new System.Drawing.Point(13, 640);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(1255, 68);
+            this.txtOutput.Size = new System.Drawing.Size(528, 68);
             this.txtOutput.TabIndex = 8;
             this.txtOutput.Text = "";
             // 
@@ -176,7 +161,7 @@
             // 
             this.txtTerminal.Depth = 0;
             this.txtTerminal.Hint = "";
-            this.txtTerminal.Location = new System.Drawing.Point(845, 149);
+            this.txtTerminal.Location = new System.Drawing.Point(570, 640);
             this.txtTerminal.MaxLength = 32767;
             this.txtTerminal.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTerminal.Name = "txtTerminal";
@@ -184,21 +169,76 @@
             this.txtTerminal.SelectedText = "";
             this.txtTerminal.SelectionLength = 0;
             this.txtTerminal.SelectionStart = 0;
-            this.txtTerminal.Size = new System.Drawing.Size(423, 28);
+            this.txtTerminal.Size = new System.Drawing.Size(698, 28);
             this.txtTerminal.TabIndex = 9;
             this.txtTerminal.TabStop = false;
             this.txtTerminal.UseSystemPasswordChar = false;
             this.txtTerminal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTerminal_KeyDown);
+            // 
+            // txtCommand
+            // 
+            this.txtCommand.HScrollBar = false;
+            this.txtCommand.Location = new System.Drawing.Point(16, 146);
+            this.txtCommand.Name = "txtCommand";
+            this.txtCommand.Size = new System.Drawing.Size(1252, 439);
+            this.txtCommand.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(96, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(185, 89);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(265, 89);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(45, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(16, 89);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // formIDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtCommand);
             this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.txtOutput);
-            this.Controls.Add(this.txtCommand);
-            this.Controls.Add(this.btnRun);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
@@ -207,8 +247,13 @@
             this.Name = "formIDE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI Command Editor";
+            this.Load += new System.EventHandler(this.formIDE_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +267,17 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialFlatButton btnRun;
-        private System.Windows.Forms.RichTextBox txtCommand;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commandListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.RichTextBox txtOutput;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTerminal;
+        private ScintillaNET.Scintilla txtCommand;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

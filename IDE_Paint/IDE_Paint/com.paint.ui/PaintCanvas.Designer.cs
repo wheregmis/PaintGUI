@@ -37,7 +37,7 @@
             this.picCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCanvas.Location = new System.Drawing.Point(0, 0);
             this.picCanvas.Name = "picCanvas";
-            this.picCanvas.Size = new System.Drawing.Size(1262, 673);
+            this.picCanvas.Size = new System.Drawing.Size(1062, 653);
             this.picCanvas.TabIndex = 0;
             this.picCanvas.TabStop = false;
             this.picCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.picCanvas_Paint);
@@ -46,8 +46,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1062, 653);
             this.Controls.Add(this.picCanvas);
+            this.MaximizeBox = false;
             this.Name = "PaintCanvas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaintCanvas";

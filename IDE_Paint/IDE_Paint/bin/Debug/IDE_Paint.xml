@@ -199,7 +199,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.#ctor(System.Windows.Forms.RichTextBox)">
+        <member name="M:IDE_Paint.com.paint.ui.PaintCanvas.#ctor(System.String)">
             <summary>
             initializing constructor
             </summary>
@@ -243,13 +243,6 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
-        </member>
-        <member name="M:IDE_Paint.formIDE.SyntaxChecker(System.String)">
-            <summary>
-            method to check the syntax
-            </summary>
-            <param name="commandsyntax"></param>
-            <returns>true or false</returns>
         </member>
         <member name="F:IDE_Paint.formIDE.components">
             <summary>

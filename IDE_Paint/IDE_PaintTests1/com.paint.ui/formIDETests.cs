@@ -22,7 +22,7 @@ namespace IDE_Paint.Tests
             
                 String command = "Draw rectangle 20s,20 on 10,10";
                 formIDE ide = new formIDE();
-                Assert.AreEqual(false, ide.SyntaxChecker(command));
+                Assert.AreEqual(false, ide.SyntaxValidating(command));
                
         }
         [TestMethod()]
@@ -31,7 +31,7 @@ namespace IDE_Paint.Tests
 
             String command = "Draw rectangle 20,20 on 10,10";
             formIDE ide = new formIDE();
-            Assert.AreEqual(true, ide.SyntaxChecker(command));
+            Assert.AreEqual(true, ide.SyntaxValidating(command));
 
         }
         [TestMethod()]
@@ -40,7 +40,7 @@ namespace IDE_Paint.Tests
 
             String command = "Draw rctangle 20,20 on 10,10";
             formIDE ide = new formIDE();
-            Assert.AreEqual(false, ide.SyntaxChecker(command));
+            Assert.AreEqual(false, ide.SyntaxValidating(command));
 
         }
         [TestMethod()]
@@ -49,7 +49,7 @@ namespace IDE_Paint.Tests
 
             String command = "Draw rectangle 20,20 on 10,10";
             formIDE ide = new formIDE();
-            Assert.AreEqual(true, ide.SyntaxChecker(command));
+            Assert.AreEqual(true, ide.SyntaxValidating(command));
 
         }
 

@@ -43,3 +43,7 @@ C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csproj.C
 C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csproj.CopyComplete
 C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.exe
 C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.pdb
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.dll
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.xml
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.dll
+C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.xml

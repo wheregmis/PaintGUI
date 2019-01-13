@@ -1,5 +1,7 @@
 ﻿using IDE_Paint.com.paint.factory;
 using IDE_Paint.com.paint.shapes;
+using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace IDE_Paint.com.paint.ui
         //ellipse
         public Graphics g;
         String Shape;
-        RichTextBox txtCommand;
+        String txtCommand;
         int x, y, width, height, wid, hei, counter, x1, y1, checkcounter, incrementCircle, incrementRectangle, incrementvalue;
 
         /// <summary>
@@ -44,19 +46,20 @@ namespace IDE_Paint.com.paint.ui
              * 
              * */
 
+            var result = txtCommand.Split(new[] { '\r', '\n' });
 
-
-            int Length = txtCommand.Lines.Length;
+            int Length = result.Length;
 
             string[] text = new string[Length];
             string[] singleMultiple = new string[1];
-            singleMultiple[0] = txtCommand.Lines[0].ToString();
+            var wordstest = result[0].ToLower().Split(' ');
+            singleMultiple[0] = wordstest[0].ToString();
 
             if (singleMultiple[0].ToLower().Equals("declare")){
                 
 
                 for (int x = 1; x < Length; x++) {
-                    text[x] = txtCommand.Lines[x].ToString();
+                    text[x] = result[x].ToString();
                     String command = text[x].ToLower();
                     //  String command = "Draw Rectangle 20,20 on x,y";
                     string[] words = command.Split(' ');
@@ -119,17 +122,27 @@ namespace IDE_Paint.com.paint.ui
                         this.incrementvalue = Convert.ToInt32(words[2]);
                         for (int i = 0; i < this.counter; i++)
                         {
-                            if (i.Equals(this.checkcounter))
+                            try
                             {
-                                this.incrementvalue = this.incrementCircle;
+                                if (i.Equals(this.checkcounter))
+                                {
+                                    this.incrementvalue = this.incrementCircle;
+                                }
+                                Console.WriteLine(i);
+                                DrawShape(shape.ToUpper(), param, axis);
+                                IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                shape3.SetParam(this.x, this.y, wi, hi);
+                                wi = wi + this.incrementvalue;
+                                hi = hi + this.incrementvalue;
+                                shape3.Draw(g);
+
                             }
-                            Console.WriteLine(i);
-                            DrawShape(shape.ToUpper(), param, axis);
-                            IShape shape3 = ShapeFactory.getShape(this.Shape);
-                            shape3.SetParam(this.x, this.y, wi, hi);
-                            wi = wi + this.incrementvalue;
-                            hi = hi + this.incrementvalue;
-                            shape3.Draw(g);
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
+
 
                         }
                     }
@@ -146,24 +159,30 @@ namespace IDE_Paint.com.paint.ui
                         this.incrementvalue = Convert.ToInt32(words[2]);
                         for (int i = 0; i < this.counter; i++)
                         {
-                            if (i.Equals(this.checkcounter))
+                            try
                             {
-                                this.incrementvalue = this.incrementRectangle;
+                                if (i.Equals(this.checkcounter))
+                                {
+                                    this.incrementvalue = this.incrementRectangle;
+                                }
+                                Console.WriteLine(i);
+                                DrawShape(shape.ToUpper(), param, axis);
+                                IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                shape3.SetParam(this.x, this.y, wi, hi);
+                                wi = wi + this.incrementvalue;
+                                hi = hi + this.incrementvalue;
+                                shape3.Draw(g);
                             }
-                            Console.WriteLine(i);
-                            DrawShape(shape.ToUpper(), param, axis);
-                            IShape shape3 = ShapeFactory.getShape(this.Shape);
-                            shape3.SetParam(this.x, this.y, wi, hi);
-                            wi = wi + this.incrementvalue;
-                            hi = hi + this.incrementvalue;
-                            shape3.Draw(g);
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[0].ToUpper());
+                                this.Close();
+                            }
+
 
                         }
                     }
                    
-                   
-
-
                 }
                 Console.WriteLine(this.wid + this.hei);
             }
@@ -171,7 +190,7 @@ namespace IDE_Paint.com.paint.ui
             else {
                 for (int x = 0; x < Length; x++)
                 {
-                    text[x] = txtCommand.Lines[x].ToString();
+                    text[x] = result[x].ToString();
                     // MessageBox.Show(txtCommand.Lines[0].ToString());
                     String command = text[x].ToLower();
                     //  String command = "Draw Rectangle 20,20 on x,y";
@@ -181,43 +200,66 @@ namespace IDE_Paint.com.paint.ui
                         if (words[1].Equals("rectangle"))
                         {
                             //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-
-                            DrawShape(words[1].ToUpper(), words[2], words[4]);
-                            IShape shape2 = ShapeFactory.getShape(this.Shape);
-                            shape2.SetParam(this.x, this.y, this.width, this.height);
-                            shape2.Draw(g);
+                            try {
+                                DrawShape(words[1].ToUpper(), words[2], words[4]);
+                                IShape shape2 = ShapeFactory.getShape(this.Shape);
+                                shape2.SetParam(this.x, this.y, this.width, this.height);
+                                shape2.Draw(g);
+                            } catch(Exception ex) {
+                                MessageBox.Show("Enter the full command for "+words[1].ToUpper());
+                                this.Close();
+                            }
+                            
 
                         }
                         else if (words[1].Equals("ellipse"))
                         {
-                            //   PaintCanvas pc = new PaintCanvas();
-                            //   pc.DrawShape(words[1].ToUpper(), words[2], words[4]);
 
-                            //  new PaintCanvas(words[1].ToUpper(), words[2], words[4]).Show();
-                            DrawShape(words[1].ToUpper(), words[2], words[4]);
-                            IShape shape2 = ShapeFactory.getShape(this.Shape);
-                            shape2.SetParam(this.x, this.y, this.width, this.height);
-                            shape2.Draw(g);
+                            try
+                            {
+                                DrawShape(words[1].ToUpper(), words[2], words[4]);
+                                IShape shape2 = ShapeFactory.getShape(this.Shape);
+                                shape2.SetParam(this.x, this.y, this.width, this.height);
+                                shape2.Draw(g);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
                         }
 
                         else if (words[1].Equals("triangle"))
                         {
-                            
-                            DrawShape(words[1].ToUpper(), words[2], words[4]);
-                            IShape shape2 = ShapeFactory.getShape("TRIANGLE");
-                            shape2.SetParam(this.x, this.y, this.width, this.height);
-                            shape2.Draw(g);
+                            try
+                            {
+                                DrawShape(words[1].ToUpper(), words[2], words[4]);
+                                IShape shape2 = ShapeFactory.getShape("TRIANGLE");
+                                shape2.SetParam(this.x, this.y, this.width, this.height);
+                                shape2.Draw(g);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
                         }
                         else if (words[1].Equals("cube"))
                         {
-                            //draw cube 100 on 100,100
-                            
-                              DrawShape(words[1].ToUpper(), words[2]+","+ words[2], words[4]);
-                            int param = Convert.ToInt32(words[2]);
+                            try
+                            {
+                                DrawShape(words[1].ToUpper(), words[2] + "," + words[2], words[4]);
+                                int param = Convert.ToInt32(words[2]);
 
-                            IShape shape2 = ShapeFactory.getShape("CUBE");
-                            shape2.SetParam(this.x, this.y, param, param);
-                            shape2.Draw(g);
+                                IShape shape2 = ShapeFactory.getShape("CUBE");
+                                shape2.SetParam(this.x, this.y, param, param);
+                                shape2.Draw(g);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
                         }
                         else if (words[1].Equals("polygon"))
                         {
@@ -231,22 +273,36 @@ namespace IDE_Paint.com.paint.ui
                                 string[] points = words[j].Split(',');
                                 pointList.Add(new Point(Convert.ToInt32( points[0]), Convert.ToInt32(points[1])));
                             }
-                            Point[] pointArray = pointList.ToArray();
-                            IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
-                            shape2.setPoints(pointArray);
-                           // shape2.SetParam(this.x, this.y, this.width, this.height);
-                            shape2.Draw(g);
+                            
+                            try
+                            {
+                                Point[] pointArray = pointList.ToArray();
+                                IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
+                                shape2.setPoints(pointArray);
+                                // shape2.SetParam(this.x, this.y, this.width, this.height);
+                                shape2.Draw(g);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
                         }
                         else if (words[1].Equals("texture"))
                         {
-                            //draw texture 100,100 C:/Users/xawbe/Pictures/1.jpg
-
-                            
-                            DrawShape(words[1].ToUpper(), words[2], null);
-                            IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
-                             shape2.SetParam(0, 0, this.width, this.height);
-                            shape2.setPath(words[3]);
-                            shape2.Draw(g);
+                            try
+                            {
+                                DrawShape(words[1].ToUpper(), words[2], null);
+                                IShape shape2 = ShapeFactory.getShape(words[1].ToUpper());
+                                shape2.SetParam(0, 0, this.width, this.height);
+                                shape2.setPath(words[3]);
+                                shape2.Draw(g);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Enter the full command for " + words[1].ToUpper());
+                                this.Close();
+                            }
                         }
 
                     }
@@ -264,23 +320,32 @@ namespace IDE_Paint.com.paint.ui
 
                             for (int i = 0; i < Convert.ToInt32(words[1]); i++)
                             {
-                              
-                                IShape shape3 = ShapeFactory.getShape(this.Shape);
-                                shape3.SetParam(this.x, this.y, wi, hi);
-                                if (words[6].Equals("add")) {
-                                    Console.WriteLine(i);
-                                    wi = wi + Convert.ToInt32(words[7]);
-                                    hi = hi + Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
-                                }
-                                else if (words[6].Equals("substract"))
+
+                                try
                                 {
-                                    Console.WriteLine(i);
-                                    wi = wi - Convert.ToInt32(words[7]);
-                                    hi = hi - Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
+                                    IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                    shape3.SetParam(this.x, this.y, wi, hi);
+                                    if (words[6].Equals("add"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi + Convert.ToInt32(words[7]);
+                                        hi = hi + Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
+                                    else if (words[6].Equals("substract"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi - Convert.ToInt32(words[7]);
+                                        hi = hi - Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
                                 }
-                                
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Enter the full command for " + words[2].ToUpper());
+                                    this.Close();
+                                }
+
                             }
 
                         }
@@ -293,24 +358,30 @@ namespace IDE_Paint.com.paint.ui
                             for (int i = 0; i < Convert.ToInt32(words[1]); i++)
                             {
 
-                                IShape shape3 = ShapeFactory.getShape(this.Shape);
-                                shape3.SetParam(this.x, this.y, wi, hi);
-                                if (words[6].Equals("add"))
+                                try
                                 {
-                                    Console.WriteLine(i);
-                                    wi = wi + Convert.ToInt32(words[7]);
-                                    hi = hi + Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
+                                    IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                    shape3.SetParam(this.x, this.y, wi, hi);
+                                    if (words[6].Equals("add"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi + Convert.ToInt32(words[7]);
+                                        hi = hi + Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
+                                    else if (words[6].Equals("substract"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi - Convert.ToInt32(words[7]);
+                                        hi = hi - Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
                                 }
-                                else if (words[6].Equals("substract"))
+                                catch (Exception ex)
                                 {
-                                    Console.WriteLine(i);
-                                    wi = wi - Convert.ToInt32(words[7]);
-                                    hi = hi - Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
+                                    MessageBox.Show("Enter the full command for " + words[2].ToUpper());
+                                    this.Close();
                                 }
-                                
-
                             }
                         }
                         else if (words[2].Equals("triangle"))
@@ -321,24 +392,31 @@ namespace IDE_Paint.com.paint.ui
 
                             for (int i = 0; i < Convert.ToInt32(words[1]); i++)
                             {
+                                try
+                                {
 
-                                IShape shape3 = ShapeFactory.getShape(this.Shape);
-                                shape3.SetParam(this.x, this.y, wi, hi);
-                                if (words[6].Equals("add"))
-                                {
-                                    Console.WriteLine(i);
-                                    wi = wi + Convert.ToInt32(words[7]);
-                                    hi = hi + Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
+                                    IShape shape3 = ShapeFactory.getShape(this.Shape);
+                                    shape3.SetParam(this.x, this.y, wi, hi);
+                                    if (words[6].Equals("add"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi + Convert.ToInt32(words[7]);
+                                        hi = hi + Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
+                                    else if (words[6].Equals("substract"))
+                                    {
+                                        Console.WriteLine(i);
+                                        wi = wi - Convert.ToInt32(words[7]);
+                                        hi = hi - Convert.ToInt32(words[7]);
+                                        shape3.Draw(g);
+                                    }
                                 }
-                                else if (words[6].Equals("substract"))
+                                catch (Exception ex)
                                 {
-                                    Console.WriteLine(i);
-                                    wi = wi - Convert.ToInt32(words[7]);
-                                    hi = hi - Convert.ToInt32(words[7]);
-                                    shape3.Draw(g);
+                                    MessageBox.Show("Enter the full command for " + words[2].ToUpper());
+                                    this.Close();
                                 }
-                                
                             }
                         }
                         
@@ -353,10 +431,12 @@ namespace IDE_Paint.com.paint.ui
         /// initializing constructor
         /// </summary>
         /// <param name="command"></param>
-        public PaintCanvas(RichTextBox command) {
+        public PaintCanvas(String command) {
             InitializeComponent();
             this.txtCommand = command;
-          //  validateCommand();
+            
+
+            //  validateCommand();
         }
 
         /// <summary>
