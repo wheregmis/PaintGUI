@@ -18,8 +18,6 @@ C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.exe
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.pdb
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\MaterialSkin.dll
-C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.dll
-C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\ScintillaNET.xml
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.formIDE.resources
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.PaintCanvas.resources
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.Properties.Resources.resources
@@ -30,3 +28,18 @@ C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.pdb
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csprojAssemblyReference.cache
 C:\Users\xawbe\Documents\GitHub\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.CommandList.resources
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.exe.config
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.xml
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.exe
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\IDE_Paint.pdb
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\bin\Debug\MaterialSkin.dll
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csprojAssemblyReference.cache
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.CommandList.resources
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.formIDE.resources
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.com.paint.ui.PaintCanvas.resources
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.Properties.Resources.resources
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csproj.GenerateResource.cache
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csproj.CoreCompileInputs.cache
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.csproj.CopyComplete
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.exe
+C:\Users\xawbe\Desktop\PaintGUI\IDE_Paint\IDE_Paint\obj\Debug\IDE_Paint.pdb
