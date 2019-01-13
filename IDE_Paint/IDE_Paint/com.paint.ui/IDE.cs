@@ -1,4 +1,5 @@
-﻿using IDE_Paint.com.paint.ui;
+﻿using IDE_Paint.com.paint.exception;
+using IDE_Paint.com.paint.ui;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using ScintillaNET;
@@ -226,7 +227,12 @@ namespace IDE_Paint
                             
                         }
                         else {
-                            txtOutput.Text = "Not a valid path";
+                            try {
+                                throw new PathException("Invalid Path");
+                            } catch (PathException ex) {
+                               
+                            }
+                            
                         }
                         
                     }
